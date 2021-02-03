@@ -27,7 +27,7 @@ public class Application {
 
         List<Content> contents = new DirectoryContent(directoryPath, includeHidden).getContents();
 
-        //List of all files and directories
+        //List of all files
         System.out.println("List of files in the specified directory:");
         contents.forEach(c -> System.out.println(c.toString()));
     }
