@@ -11,7 +11,7 @@
 
 ##### Assumptions
 
-Since requirement doesn't say anything about hidden files, application only return hidden files if we pass second argument to include hidden file as true.
-e.g: following command will include the hidden files as well.
+Since requirement doesn't say anything about hidden files, application doesn't return hidden files by default. We need to pass second argument as true to include hidden files.
+e.g: following command will include the hidden files.
 >> java -jar target/directory-1.0.0-SNAPSHOT.jar /home true
 
