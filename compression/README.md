@@ -1,7 +1,7 @@
 # compression
 
 ### Instructions to run from the command line.
-##  Prerequisites: Maven and Java needs to be installed
+#####  Prerequisites: Maven and Java needs to be installed
 
 - Go to compression folder.
 - Build the jar; command : mvn clean install 
