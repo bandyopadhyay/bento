@@ -39,13 +39,12 @@ public class Content {
 
     /**
      * Returns the content in formatted String
-     * @return
+     * @return a String object description
      */
     @Override
     public String toString() {
         return "Name = " + fileName +
                 ", Size = " + getSizeInKB() +
-                " KB, Path = '" + fullPath + "'"
-                ;
+                " KB, Path = '" + fullPath + "'";
     }
 }

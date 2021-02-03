@@ -16,26 +16,28 @@ public class Compressor {
         if(input==null || input.length()==0) {
             return input;
         }
+
         StringBuilder result = new StringBuilder();
-        int i = 0;
+        int pos = 0;
         int count = 0;
-        while(i < input.length() - 1) {
+
+        while(pos < input.length() - 1) {
             count++;
-            if (input.charAt(i) != input.charAt(i + 1)) {
-                result.append(input.charAt(i));
+            if (input.charAt(pos) != input.charAt(pos + 1)) {
+                result.append(input.charAt(pos));
                 appendcount(result, count);
                 count = 0;
             }
-            i++;
+            pos++;
         }
-        result.append(input.charAt(i));
+        result.append(input.charAt(pos));
         appendcount(result, count+1);
         return result.toString();
     }
 
     private void appendcount(StringBuilder result, int count) {
         if(count>1) {
-           result.append(count );
+           result.append(count);
         }
     }
 }

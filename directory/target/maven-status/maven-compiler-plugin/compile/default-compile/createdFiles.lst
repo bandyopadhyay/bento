@@ -1,3 +1,3 @@
-bento/DirectoryContent.class
-bento/Content.class
-bento/Application.class
+org/bento/directory/DirectoryContent.class
+org/bento/directory/Application.class
+org/bento/directory/Content.class

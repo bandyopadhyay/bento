@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Finds and return all the contents in directory
+ * Finds and returns all the contents in directory
  */
 public class DirectoryContent {
 
@@ -26,28 +26,28 @@ public class DirectoryContent {
     }
 
     /**
-     * Return the content of the directory sorted in ascending order of size.
-     * @return
+     * Retrieve the content of the directory sorted in ascending order of size.
+     * @return a list of Content objects
      */
 
     public List<Content> getContents(){
         contents= new ArrayList<>();
-        readDir(directoryPath);
+        readDirectory(directoryPath);
         contents.sort(Comparator.comparing(Content::getSize));
         return contents;
     }
 
-        private void readDir(File file) {
-            if(file.isDirectory()){
-                File[] allFilles = file.listFiles();
-                for(File f: allFilles) {
-                    readDir(f);
-                }
-            } else {
-                if(includeHidden || !file.isHidden()) {
-                    contents.add(mapToContent(file));
+    private void readDirectory(File file) {
+        if(file.isDirectory()){
+            File[] allFiles = file.listFiles();
+            if(allFiles!=null) {
+                for (File fl : allFiles) {
+                    readDirectory(fl);
                 }
             }
+        } else if(includeHidden || !file.isHidden()) {
+            contents.add(mapToContent(file));
+        }
     }
 
     private Content mapToContent(File file) {
@@ -62,7 +62,7 @@ public class DirectoryContent {
         if (directoryPath == null) {
             throw new IllegalArgumentException("directoryPath cannot be null.");
         }
-        if(directoryPath.isDirectory()){
+        if(!directoryPath.isDirectory()){
             throw new IllegalArgumentException("Not a valid directory path.");
         }
     }
